@@ -16,7 +16,9 @@ def getServerStatus():
 name = "locked"
 
 def doData():
-    print name + ".value " + str( 100 * (getServerStatus()["globalLock"]["lockTime"]/getServerStatus()["globalLock"]["totalTime"]) )
+    status = getServerStatus()
+    ratio = float(str(status["globalLock"]["lockTime"])+".0") / float(status["globalLock"]["totalTime"])
+    print name + ".value " + str( 100 * ratio )
 
 def doConfig():
 
