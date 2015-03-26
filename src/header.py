@@ -7,5 +7,5 @@ import pymongo
 def getServerStatus():
     host = "127.0.0.1"
     port = 27017
-    c = pymongo.MongoClient(host, port)
+    c = pymongo.Connection(host, port)
     return c.admin.command('serverStatus', workingSet=True)
